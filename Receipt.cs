@@ -20,7 +20,7 @@ namespace devProj
             bool taxed = true;
 
             // Duplicate check
-            if (duplicate(item, addItemList, this) == false)
+            if (!duplicate(item, addItemList, this))
             {
                 // Tax loop
                 foreach (var list in taxCheck.taxableItems)
@@ -49,7 +49,7 @@ namespace devProj
                         }
                     }
                 }
-                if (taxed == true)
+                if (taxed)
                 {
                     // Check to see if 'Imported' exists
                     if (importCheck == "Imported")

@@ -33,7 +33,7 @@ namespace devProj
             // create variables
             var newReceipt = new Receipt();
             var addItemList = new List<Item>();
-            for(int i = 0; i < items.Length; i++)
+            for (int i = 0; i < items.Length; i++)
             {
                 // Creates a new item to add to the list
                 Item addItem = new Item();
@@ -48,7 +48,7 @@ namespace devProj
                 // Splice price
                 addItem.price = Convert.ToDecimal(items[i].Split(' ').Last());
 
-                // // <---------- Event Handlers for Import/Tax ---------->
+                // Applies Taxes
                 string[] importCheck = items[i].Split(' ');
                 newReceipt.processTaxes(addItem, addItemList, importCheck[1]);
 
